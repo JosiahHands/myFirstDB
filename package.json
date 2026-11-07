@@ -1,0 +1,18 @@
+{
+  "name": "myfirstdb",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:sql": "node scripts/data_to_sql.ts",
+    "build": "tsc -b",
+    "watch": "tsc -b --watch",
+    "web": "tsc -b && python3 -m http.server 8000 --directory web"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

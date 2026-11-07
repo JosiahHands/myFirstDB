@@ -1,0 +1,25 @@
+// Page script. web/script/*.ts compiles to web/*.js, next to index.html.
+//
+// Import data by where it ends up after compiling: `import { result } from "./gold.js"`.
+// "rootDirs" tells TypeScript to treat this folder and resultData/ as one
+// folder, so "./gold.js" finds the types in resultData/gold.ts.
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "..",
+    "rootDirs": [".", "../../resultData"],
+    "tsBuildInfoFile": "../../.tsbuild/web.tsbuildinfo",
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "types": [],
+    "strict": true,
+    "verbatimModuleSyntax": true
+  },
+  "include": ["./*.ts"],
+  // TypeScript skips files inside outDir by default; outDir (web/) contains
+  // this folder, so turn that off or script.ts is silently ignored.
+  "exclude": [],
+  "references": [{ "path": "../../resultData" }]
+}

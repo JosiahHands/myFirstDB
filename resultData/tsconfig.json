@@ -1,0 +1,19 @@
+// Chart data. Each resultData/<name>.ts compiles to web/<name>.js, next to
+// index.html, so the page script can import it as "./<name>.js".
+{
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "../web",
+    "declarationDir": "../.tsbuild/resultData", // .d.ts files stay out of web/
+    "tsBuildInfoFile": "../.tsbuild/resultData.tsbuildinfo",
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["es2022", "dom"],
+    "types": [],
+    "strict": true,
+    "verbatimModuleSyntax": true
+  },
+  "include": ["./*.ts"]
+}

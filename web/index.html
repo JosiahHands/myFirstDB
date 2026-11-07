@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inflation Compared</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Prices since 1913: official inflation vs. metals</h1>
+        <p class="lede">
+          Each line shows how many times its 1913 price something cost in a given year (1913 = 1×).
+          The scale is logarithmic, so the same rise anywhere on the chart means the same percentage change.
+        </p>
+      </header>
+
+      <section class="viz" aria-labelledby="chart-title">
+        <h2 id="chart-title" class="visually-hidden">Price multiplier since 1913</h2>
+
+        <div class="legend" id="legend" role="group" aria-label="Show or hide a line"></div>
+
+        <div
+          class="chart"
+          id="chart"
+          tabindex="0"
+          aria-label="Line chart of price multipliers since 1913. Use the left and right arrow keys to read each year."
+          aria-describedby="chart-note"
+        >
+          <svg id="plot" aria-hidden="true"></svg>
+          <div class="tooltip" id="tooltip" role="status" aria-live="polite" hidden></div>
+        </div>
+
+        <p class="note" id="chart-note">
+          <strong>Combined</strong> is a basket that held equal dollar amounts of gold, silver and copper in 1913
+          (the average of their three multipliers). Gold has no 1960 value in the source data, so the gold and
+          combined lines have a one-year gap there.
+        </p>
+
+        <details class="table-view">
+          <summary>Show data table</summary>
+          <div class="table-wrap"><table id="table"></table></div>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+// Solution file: `npx tsc -b` builds every project below.
+//   scripts/      Node scripts (type-check only)
+//   resultData/   chart data      -> web/<name>.js
+//   web/script/   page script     -> web/script.js
+{
+  "files": [],
+  "references": [
+    { "path": "./scripts" },
+    { "path": "./resultData" },
+    { "path": "./web/script" }
+  ]
+}

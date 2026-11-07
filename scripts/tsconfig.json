@@ -1,0 +1,19 @@
+// Node scripts (data_to_sql.ts). Node runs the .ts files directly, so this
+// project only type-checks; it writes nothing but build info to .tsbuild/.
+{
+  "compilerOptions": {
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "../.tsbuild/scripts",
+    "tsBuildInfoFile": "../.tsbuild/scripts.tsbuildinfo",
+    "rootDir": ".",
+    "target": "esnext",
+    "module": "nodenext",
+    "types": ["node"],
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true
+  },
+  "include": ["./**/*.ts"]
+}
